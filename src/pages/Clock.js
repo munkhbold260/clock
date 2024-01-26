@@ -1,7 +1,8 @@
-import WindowClock from "@/components/WindowClock";
+import { WindowClock } from "@/components/WindowClock";
 import { Footer } from "@/components/Footer";
 import { Render, Timer } from "@/components/Timer";
 import { Stopwatch } from "@/components/StopWatch";
+import { Test } from "@/components/Test";
 
 export const Clock = () => {
   return (
@@ -11,6 +12,7 @@ export const Clock = () => {
 
       {/* <Footer /> */}
       {/* <Timer /> */}
+      {/* <Test /> */}
     </div>
   );
 };

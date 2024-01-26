@@ -2,11 +2,9 @@ import { Button } from "@mui/material";
 import React from "react";
 import { useStopwatch } from "react-timer-hook";
 
-const interval = 1000;
-
+const ms = setInterval;
 function MyStopwatch() {
   const {
-    totalSeconds,
     seconds,
     minutes,
     hours,
@@ -15,22 +13,22 @@ function MyStopwatch() {
     start,
     pause,
     reset,
-  } = useStopwatch({ autoStart: true });
-  const mill = seconds / 10;
+  } = useStopwatch({ autoStart: false });
+
   return (
     <div className="w-full h-full text-white text-6xl text-center flex flex-col justify-center gap-5">
       <div>
-        {hours}:{minutes}:{seconds}:{}
+        {hours}:{minutes}:{seconds}:{ms}
       </div>
       <p>{isRunning ? "Running" : "Not running"}</p>
       <div className="flex gap-3">
-        <Button variant="contained" className="w-1/3" onClick={start}>
+        <Button variant="contained" className="w-1/3" onClick={reset}>
           reset
         </Button>
-        <Button variant="contained" className="w-1/3" onClick={pause}>
+        <Button variant="contained" className="w-1/3" onClick={start}>
           Start
         </Button>
-        <Button variant="contained" className="w-1/3" onClick={reset}>
+        <Button variant="contained" className="w-1/3" onClick={pause}>
           pause
         </Button>
       </div>

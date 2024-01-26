@@ -2,7 +2,7 @@ import { Button } from "@mui/material";
 import React from "react";
 import useCountDown from "react-countdown-hook";
 
-const interval = 1000; // interval to change remaining time amount, defaults to 1000
+const interval = 1000;
 
 export const Timer = () => {
   const [timeLeft, { start, pause, resume, reset }] = useCountDown(interval);
